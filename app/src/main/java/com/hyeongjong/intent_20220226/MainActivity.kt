@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
             val myIntent = Intent(this,ViewMessageActivity::class.java)
 //            myIntent에, 데이터를 첨부하자.
-            myIntent.putExtra("메시지",??)
+            myIntent.putExtra("메시지",inputMessage)
 
             startActivity(myIntent)
         }
