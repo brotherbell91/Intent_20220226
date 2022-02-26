@@ -1,5 +1,6 @@
 package com.hyeongjong.intent_20220226
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_other.*
@@ -12,6 +13,8 @@ class OtherActivity : AppCompatActivity() {
         btnReturn.setOnClickListener {
             
 //            이전 화면 (메인 화면) 으로 돌아가기
+            val myIntent = Intent(this,MainActivity::class.java)
+            startActivity(myIntent)
         }
     }
 }
