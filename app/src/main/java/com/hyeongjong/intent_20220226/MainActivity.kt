@@ -61,18 +61,28 @@ class MainActivity : AppCompatActivity() {
             startActivity(myIntent)
         }
 
-        btnCall.setOnClickListener {
+        btnSms.setOnClickListener {
 
 //            사용법이 맞게 작성되어도, 권한문제로 앱 강제 종료
             val inputPhoneNum = edtPhoneNum.text.toString()
             val myUri = Uri.parse("smsto:${inputPhoneNum}")
             val myIntent = Intent(Intent.ACTION_SENDTO, myUri)
 
-//            미리 입력할 내용 첨부
+//            미리 입력할 내용 첨부(sms_body는 모든 폰 동일)
             myIntent.putExtra("sms_body", "이 앱을 공유해주세요!")
 
             startActivity(myIntent)
         }
+
+        btnNaverLink.setOnClickListener {
+
+            val myUri = Uri.parse("http://naver.com")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+
+            startActivity(myIntent)
+        }
+
+
 
     }
 
