@@ -51,6 +51,15 @@ class MainActivity : AppCompatActivity() {
             val myIntent = Intent(Intent.ACTION_DIAL, myUri)
             startActivity(myIntent)
         }
+
+        btnCall.setOnClickListener {
+
+//            사용법이 맞게 작성되어도, 권한문제로 앱 강제 종료
+            val inputPhoneNum = edtPhoneNum.text.toString()
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_CALL, myUri)
+            startActivity(myIntent)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
