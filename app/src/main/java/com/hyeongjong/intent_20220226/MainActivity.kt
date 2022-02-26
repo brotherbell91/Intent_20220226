@@ -82,6 +82,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(myIntent)
         }
 
+        btnKakaoAppLink.setOnClickListener {
+//            details부터 붙여넣으면됨
+            val myUri = Uri.parse("market://details?id=com.kakao.talk")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+
+            startActivity(myIntent)
+        }
+
 
 
     }
