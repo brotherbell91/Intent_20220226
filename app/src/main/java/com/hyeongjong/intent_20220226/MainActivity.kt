@@ -60,6 +60,20 @@ class MainActivity : AppCompatActivity() {
             val myIntent = Intent(Intent.ACTION_CALL, myUri)
             startActivity(myIntent)
         }
+
+        btnCall.setOnClickListener {
+
+//            사용법이 맞게 작성되어도, 권한문제로 앱 강제 종료
+            val inputPhoneNum = edtPhoneNum.text.toString()
+            val myUri = Uri.parse("smsto:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_SENDTO, myUri)
+
+//            미리 입력할 내용 첨부
+            myIntent.putExtra("sms_body", "이 앱을 공유해주세요!")
+
+            startActivity(myIntent)
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
